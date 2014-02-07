@@ -5,11 +5,24 @@ $(document).ready(function() {
 	initializePage();
 })
 
+//$(friendname).
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friend h1").click(projectClick);
+}
+
+function projectClick(e) { 
+    // prevent the page from reloading 
+    e.preventDefault();
+    // In an event handler, $(this) refers to 
+    // the object that triggered the event 
+    //var newname = anagrammedName(name);
+    var newname = $(this).text();
+    $(this).text(anagrammedName(newname));
 }
 
 function anagrammedName(name) {
